@@ -6,7 +6,9 @@ const User = require ("@models/user")
 userRouter.post("/register", async (req, res) => {
   try {
 
-   const newUser = new User({fullName,address,phone, email, pwd,image,role});
+   const newUser = new User(req.body);
+  //hash password
+
  //save the user
     await newUser.save();
     res.status(200).send({newUser, msg :"user is saved"});
