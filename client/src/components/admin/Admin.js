@@ -1,13 +1,20 @@
-import React from 'react';
-import  Navbar  from '../navbar/Navbar.js';
+import * as React from 'react';
+import Map from 'react-map-gl';
 
-export default function Admin() {
+function App() {
   return (
-
     <div>
-      
-
+    <Map
+      initialViewState={{
+        longitude: -122.4,
+        latitude: 37.8,
+        zoom: 14
+      }}
+      style={{width: 600, height: 400}}
+      mapStyle="mapbox://styles/mapbox/streets-v9"
+    />
     </div>
-  )
+  );
 }
-//<Navbar/>
+export default App
+
