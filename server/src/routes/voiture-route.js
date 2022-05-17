@@ -1,5 +1,5 @@
 const express = require("express");
-const { addVoiture, getAllVoiture,getVoiture,deleteVoiture,editVoiture} = require("@controllers/voiture-controller");
+const { addVoiture, getAllVoiture,getVoiture,deleteVoiture,editVoiture} = require( "@controllers/voiture-controller");
 const router = express.Router();
 
 

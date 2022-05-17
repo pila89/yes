@@ -1,17 +1,17 @@
 const express = require("express");
 const userRouter = express.Router();
-const User = require ("../models/user")
+const User = require ("@models/user")
 
-
-userRouter.post("/add", async (req, res) => {
+//register
+userRouter.post("/register", async (req, res) => {
   try {
 
-   const newUser = new User(req.body);
-    //user.pwd = await this.HashPwd(req.body.password)
-    let result = await newUser.save();
-    res.send( result );
+   const newUser = new User({fullName,address,phone, email, pwd,image,role});
+ //save the user
+    await newUser.save();
+    res.status(200).send({newUser, msg :"user is saved"});
   } catch (error) {
-    console.log(error);
+    res.status(500).send("can´t save the user");
   }
 });
 

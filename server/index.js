@@ -39,8 +39,8 @@ app.use(express.json()); // changer la forme des donnees
 
 // API
 
-app.use("/user", require("./src/routes/user-route"));
-app.use("/voiture", require("./src/routes/voiture-route"));
+app.use("/user", require("@routes/user-route"));
+app.use("/voiture", require("@routes/voiture-route"));
 //app.use("/xxxx", require("./src/routes/xxxx-route"));
 
 
