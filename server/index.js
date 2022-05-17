@@ -6,6 +6,7 @@ const mongoose=require('mongoose');
 const connectDB=require('./src/config/connectDB')
 const app=express(); //Instansiation Express
 require("dotenv").config();
+require ('module-alias/register');
 
 
 // connect with the database
