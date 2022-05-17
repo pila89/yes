@@ -6,13 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
-    "postinstall":"link-module-alias"
-
+    "postinstall": "link-module-alias"
   },
   "_moduleAliases": {
     "@root": ".",
     "@controllers": "./src/controllers",
-    "@models": "./src/models"
+    "@models": "./src/models",
+    "@routes": "./src/routes"
   },
   "author": "",
   "license": "ISC",
