@@ -1,20 +1,15 @@
 // require express
-
 const express=require('express');
 const mongoose=require('mongoose');
-
 const connectDB=require('./src/config/connectDB')
-const app=express(); //Instansiation Express
+const app=express(); 
 require("dotenv").config();
 require ('module-alias/register');
 
-
 // connect with the database
-
 connectDB();
 
 // CORS
-
 app.use(express.json()); // changer la forme des donnees
 // Add headers before the routes are defined
 // app.use(function (req, res, next) {
@@ -38,14 +33,10 @@ app.use(express.json()); // changer la forme des donnees
 
 
 // API
-
 app.use("/user", require("@routes/user-route"));
 app.use("/voiture", require("@routes/voiture-route"));
-//app.use("/xxxx", require("./src/routes/xxxx-route"));
-
 
 //PORt
-
 const Port =8000
 app.listen(Port,(err)=>{
 err?console.log(err):console.log(  `the server is running on the ${Port} `);
