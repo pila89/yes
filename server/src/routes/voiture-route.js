@@ -2,30 +2,16 @@ const express = require("express");
 const { addVoiture, getAllVoiture,deleteVoiture,editVoiture} = require( "@controllers/voiture-controller");
 const router = express.Router();
 
-
-// @Create => add a contact to the database
-// Data req.body
-
+//add Voiture
 router.post("/", addVoiture);
 
-// @Read => Get all The contact
-// Data
-
+//get all voiture
 router.get("/", getAllVoiture);
 
-// @Read => Get One contact By id
-// Data id => req.params
-
-//router.get("/:id", getVoiture);
-
-// @DELETE => delete one contact
-// Data id => req.params
-
+// delete voiture
 router.delete("/:id", deleteVoiture);
 
-// @Update => update one contact
-// Data id => req.params+  body=>modification
-
+// update voiture
 router.put("/:id", editVoiture);
 
 module.exports = router;

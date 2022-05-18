@@ -36,6 +36,7 @@ exports.register=async (req, res) => {
         res.status(500).send(error);
   }
 };
+
 //login
 exports.login= async (req, res) => {
     try {
@@ -77,6 +78,38 @@ exports.login= async (req, res) => {
 exports.current=async (req, res) => {
 res.status(200).send({user:req.user})
 };
+
+//update
+exports.updateUser=async (req, res) => {
+    try{
+        let result=await User.updateOne({_id:req.params.id},{$set:{...req.body}})
+       res.send({result:result, msg:"user updated"})
+      }
+      catch(error){
+        res.send("error")
+      }
+     };
+
+//get all users
+exports.getUsers=async (req, res) => {
+    try{
+      let result=await User.find()
+      res.send({result:result, msg:"all users"})
+    }
+    catch(error){
+      res.send("error")
+    }
+     };
+     
+//delete one user
+exports.deleteOneUser=async (req, res) =>  
+{try {
+       let result = await User.findByIdAndRemove({ _id: req.params.id });
+    
+      res.send( "user removed");
+     } catch (error) {
+   console.log(error);
+     }};
 
  
   

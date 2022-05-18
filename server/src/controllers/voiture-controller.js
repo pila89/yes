@@ -18,7 +18,8 @@ exports.getAllVoiture= async (req, res) => {
       console.log(error);
     }
   };
-  exports.deleteVoiture= async (req, res) => {
+
+exports.deleteVoiture= async (req, res) => {
     try {
         
       let result = await Voiture.findByIdAndRemove({ _id: req.params.id });
@@ -28,7 +29,8 @@ exports.getAllVoiture= async (req, res) => {
       console.log(error);
     }
   };
- exports.editVoiture= async (req, res) => {
+  
+exports.editVoiture= async (req, res) => {
     try {
       let result = await Voiture.findByIdAndUpdate(req.params.id,req.body );
   
@@ -37,7 +39,7 @@ exports.getAllVoiture= async (req, res) => {
       console.log(error);
     }
   };
- // module.exports = addVoiture,getAllVoiture,getVoiture,editVoiture;
+
   
 
 

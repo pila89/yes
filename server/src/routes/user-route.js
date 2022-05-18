@@ -1,6 +1,6 @@
 const express = require("express");
 const userRouter = express.Router();
-const { login, register,current} = require( "@controllers/user-controller");
+const { login, register,current,updateUser,getUsers,deleteOneUser} = require( "@controllers/user-controller");
 const {loginValidate,registerValidate,validation} = require ("@middleware/validator");
 const isAuth = require ("@middleware/passport");
 
@@ -13,17 +13,18 @@ userRouter.post("/register",registerValidate(),validation,register);
 //get current user
  userRouter.get("/current", isAuth (),current);
 
+//update user
+ userRouter.put("/:id", updateUser);
+
+ //getallusers
+userRouter.get("/",getUsers);
+
+//delete One User
+userRouter.delete('/:id',deleteOneUser);
+
  module.exports = userRouter;
 
-// userRouter.put("/update/:id", async (req, res) => {
-//   try {
-//     let result = await User.findByIdAndUpdate(req.params.id,req.body );
-
-//     res.send("user updqted" );
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
+ 
 
 // userRouter.get("/get/:email", async (req, res) => {
 //   try {
@@ -36,12 +37,6 @@ userRouter.post("/register",registerValidate(),validation,register);
 
 
 
-// try {
-//   let result = await User.findByIdAndRemove({ _id: req.params.id });
 
-//    res.send( "user removed");
-// } catch (error) {
-//   console.log(error);
-//  }
 
 
