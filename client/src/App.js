@@ -31,7 +31,7 @@ function App() {
       <Route path ="/register" element= {<Register/>}/>
       <Route path ="/user" element= {<User/>}/>
       <Route path ="/admin" element= {<Admin/>}/>
-      <privateRoute path ="/dashbord" element= {<Dashbord/>}/>
+      {/* <privateRoute path ="/dashbord" element= {<Dashbord/>}/> */}
       </Routes>
     </div>
   );
