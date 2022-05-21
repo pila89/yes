@@ -4,10 +4,12 @@ import User from "./components/user/User";
 import Admin from "./components/admin/Admin";
 import Login from "./components/login/Login";
 import {Routes,Route } from "react-router-dom" ;
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import  Dashbord  from "./components/dashbord/Dashbord";
+//import  Dashbord  from "./components/dashbord/Dashbord";
 //import PrivateRoute from "./components/router/privateRoute"
 //import { useDispatch } from "react-redux";
+
 
 
 
