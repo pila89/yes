@@ -1,7 +1,17 @@
-import React from 'react'
+import React from "react";
+import "./Footer.css"
 
-export default function footer() {
+
+const FooterPage = () => {
   return (
-    <div>footer</div>
-  )
+    <div color="blue"  >
+      
+        <div  className = "footer" >
+          &copy; {new Date().getFullYear()} Copyright: <a href="http://www.CARWORLD.com"> www.CARWORLD.com </a>
+        </div>
+     
+    </div>
+  );
 }
+
+export default FooterPage;

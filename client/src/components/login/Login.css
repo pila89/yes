@@ -15,3 +15,7 @@
    display: flex;
    justify-content: center;
 }
+.toto{
+    width: auto;
+    height: auto;
+}

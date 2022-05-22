@@ -13,10 +13,12 @@ function Login() {
     const dispatch = useDispatch();
   return (
     <div>
+     
+      <img className ="toto "src="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"/>
       <Card className='no'> 
         <div>
             <div className='oui'>
-             1111
+            Login
             </div>
        
         </div>
@@ -27,7 +29,7 @@ function Login() {
         <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email </Form.Label>
-        <Form.Control type="email" placeholder="Enter email"   onChange={(e) => setEmail(e.target.value)}/>
+        <Form.Control type="email" placeholder="Enter your Email"   onChange={(e) => setEmail(e.target.value)}/>
         <Form.Text className="text-muted">
         </Form.Text>
           </Form.Group>

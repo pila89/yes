@@ -1,16 +1,75 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import "./Navbar.css";
 
+function NavBar() {
+  const [click, setClick] = useState(false);
 
-export default function () {
+  const handleClick = () => setClick(!click);
+  
   return (
-    <nav>
-        
-    <Link to ="/admin">Admin</Link>
-    <Link to ="/login">Login</Link>
-    <Link to ="/register">Register</Link>
-    <Link to ="/user">User</Link>
-        
-    </nav>
-  )
+    <>
+      <nav className="navbar">
+        <div className="nav-container">
+          <NavLink to = "/" className="nav-logo">
+         CAR WORLD
+            <i className="fas fa-code"></i>
+          </NavLink>
+
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <NavLink
+                
+                to="/Home"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Home
+              </NavLink>
+            </li>
+            
+            <li className="nav-item">
+              <NavLink
+               
+                to="/Login"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+               Login
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                
+                to="/Register"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+              Register
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                
+                to="/contact"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Contact Us
+              </NavLink>
+            </li>
+          </ul>
+          <div className="nav-icon" onClick={handleClick}>
+            <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
+          </div>
+        </div>
+      </nav>
+    </>
+  );
 }
+
+export default NavBar;
