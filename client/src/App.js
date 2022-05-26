@@ -4,6 +4,7 @@ import User from "./components/user/User";
 import Admin from "./components/admin/Admin";
 import Login from "./components/login/Login";
 import Footer from "./components/footer/Footer";
+import Profile from "./components/Profile/Profile";
 
 
 import {Routes,Route } from "react-router-dom" ;
@@ -39,7 +40,7 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      <Footer/>
+      
     
       <Routes>
       <Route path ="/home" element= {<Home/>}/>
@@ -47,8 +48,10 @@ function App() {
       <Route path ="/register" element= {<Register/>}/>
       <Route path ="/user" element= {<User/>}/>
       <Route path ="/admin" element= {<Admin/>}/>
+      <Route path ="/profile" element= {<Profile/>}/>
       {/* <privateRoute path ="/dashbord" element= {<Dashbord/>}/> */}
       </Routes>
+      <Footer/>
      
     </div>
   );

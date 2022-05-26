@@ -21,7 +21,7 @@ function NavBar() {
               <NavLink
                 
                 to="/Home"
-                activeClassName="active"
+            
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -33,7 +33,7 @@ function NavBar() {
               <NavLink
                
                 to="/Login"
-                activeClassName="active"
+                
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -44,7 +44,7 @@ function NavBar() {
               <NavLink
                 
                 to="/Register"
-                activeClassName="active"
+               
                 className="nav-links"
                 onClick={handleClick}
               >
@@ -55,12 +55,13 @@ function NavBar() {
               <NavLink
                 
                 to="/contact"
-                activeClassName="active"
+              
                 className="nav-links"
                 onClick={handleClick}
               >
                 Contact Us
               </NavLink>
+              
             </li>
           </ul>
           <div className="nav-icon" onClick={handleClick}>

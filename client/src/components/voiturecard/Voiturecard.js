@@ -1,7 +1,8 @@
 import React from 'react'
-import 
+import { Row ,Card,Col} from 'react-bootstrap';
 
-export default function 
+ function voiturecard () {
+  <div>
 <Row xs={1} md={2} className="g-4">
   {Array.from({ length: 4 }).map((_, idx) => (
     <Col>
@@ -18,11 +19,11 @@ export default function
     </Col>
   ))}
 </Row>
+</div>
 
-() {
   return (
-    <div>
-<Row xs={1} md={2} className="g-4">
+<div>
+  <Row xs={1} md={2} className="g-4">
   {Array.from({ length: 4 }).map((_, idx) => (
     <Col>
       <Card>
@@ -37,9 +38,10 @@ export default function
       </Card>
     </Col>
   ))}
-</Row>
+  </Row>
 
 
-    </div>
-  )
+</div>
+         )
 }
+export default voiturecard;
