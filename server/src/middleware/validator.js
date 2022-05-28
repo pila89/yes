@@ -11,8 +11,10 @@ exports.loginValidate = () => [
   check("pwd", "enter a valid pwd").isLength({ min: 6 }),
 ];
 exports.imageValidate = () => [
- 
+  check("title", "should be a title").notEmpty(),
+  
 ];
+
 
 exports.validation = (req, res, next) => {
   const errors = validationResult(req);

@@ -1,11 +1,12 @@
 const express = require("express");
-const  {addImage} = require("@controllers/images.controllers");
+const  {addImage,findImage,deleteImage} = require("@controllers/images.controllers");
+const { imageValidate, validation } = require("@middleware/validator");
 const imageRouter = express.Router();
 
 //images
-imageRouter.post("/upload",addImage); 
-// imageRouter.get("/upload",findImage);
-// imageRouter.delete("/upload/:id",deleteImage);
+imageRouter.post("/upload",addImage,imageValidate,validation); 
+imageRouter.get("/upload",findImage);
+imageRouter.delete("/delete/:id",deleteImage);
 
  module.exports = imageRouter;
 
