@@ -3,17 +3,26 @@ const upload = require("../uti/upload");
 const uploadImage = upload.single("image");
 
 exports.addImage = async (req, res) => {
-     uploadImage(req, res, async function(err){
-        try {
-            const newImage = new Image(req.body);
-            console.log();
-            await newImage.save();
-            res.status(200).send({ newImage, msg: "image uploaded" });
-          } catch (error) {
-            console.log(error);
-          }
-    })
-};  //7el el browser
+  uploadImage(req, res, async function (err) {
+    if (err) {
+      res.status(404).json({ image: err.message });
+    } else {
+      const image = {
+        title: req.body.title,
+        image: req.file.filename,
+        path: process.env.BASE_URL + "/images" + req.file.filename,
+      };
+      await Image.create(image);
+      await Image.find().then((result) => {
+        res.status(200).json(result);
+      });
+    }
+  });
+  const newImage = new Image(req.body);
+  await newImage.save();
+  res.status(200).send({ newImage, msg: "image uploaded" });
+
+}; 
 
 // exports.findImage=async (req, res) =>
 //  {try {
