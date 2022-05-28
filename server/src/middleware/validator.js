@@ -10,6 +10,9 @@ exports.loginValidate = () => [
   check("email", "should be email").isEmail(),
   check("pwd", "enter a valid pwd").isLength({ min: 6 }),
 ];
+exports.imageValidate = () => [
+ 
+];
 
 exports.validation = (req, res, next) => {
   const errors = validationResult(req);
