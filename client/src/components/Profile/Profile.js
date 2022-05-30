@@ -1,4 +1,4 @@
-import "./Profile.css";
+import classes from "./Profile.module.css"
 import { SwitchVerticalIcon } from "@heroicons/react/outline";
 import { useEffect, useState } from "react";
 import Image from "./Image";
@@ -10,20 +10,19 @@ function Profile() {
   const [images, setImages] = useState([]);
   const [errors, setErrors] = useState({});
   const { register, handleSubmit } = useForm();
-  useEffect(() => {
- 
-  }, []);
+  useEffect(() => {}, []);
 
   /* onsubmit */
   const onSubmit = (data) => {
     const formData = new FormData();
     formData.append("title", data.title);
     formData.append("image", data.image[0]);
-
-
   };
   return (
     <div className="App container p-4">
+      <div>
+        <h1 className={classes.h1style}> hello</h1>
+      </div>
       <div className="form__index">
         <div>
           <button
@@ -68,7 +67,13 @@ function Profile() {
       <div className="gallery__index">
         <div className="row">
           {images.map(({ _id, title, image, path }) => (
-            <Image id={_id} title={title} image={image} path={path} setImages={setImages}/>
+            <Image
+              id={_id}
+              title={title}
+              image={image}
+              path={path}
+              setImages={setImages}
+            />
           ))}
         </div>
       </div>

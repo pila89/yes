@@ -14,9 +14,9 @@ exports.addImage = async (req, res) => {
       const image = {
         title: req.body.title,
         image: req.file.filename,
-        path: process.env.BASE_URL + "/images/" + req.file.filename,
+        path: process.env.BASE_URL + "public/images/" + req.file.filename,
       };
-      //await Image.create(image);
+      await Image.create(image);
       await Image.find().then((result) => {
         res.status(200).json(result);
       });
@@ -27,11 +27,14 @@ exports.addImage = async (req, res) => {
   res.status(200).send({ newImage, msg: "image uploaded" });
 };
 
+
+
+
 exports.findImage = async (req, res) => {
   try {
-    let result = await Image.find();
+    let result = await Image.findById({ _id: req.params.id });
 
-    res.status(200).json(result);
+    res.status(200).send({ Image, msg: "image found" });
   } catch (error) {
     res.status(200).json(result);
   }
