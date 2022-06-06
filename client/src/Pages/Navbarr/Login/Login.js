@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import {Form , Button, Card,} from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import {loginUser} from '../../Redux/actions/user';
+import {loginUser} from '../../../Redux/actions/user';
 import   "./Login.css";
-
-
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
     const dispatch = useDispatch();
   return (
     <div>

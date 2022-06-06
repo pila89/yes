@@ -1,17 +1,13 @@
 import React, { useEffect } from "react";
-import Register from "./components/register/Register";
-import User from "./components/user/User";
-import Admin from "./components/admin/Admin";
-import Login from "./components/login/Login";
-import Footer from "./components/footer/Footer";
-import Profile from "./components/Profile/Profile";
-
-
 import {Routes,Route } from "react-router-dom" ;
+import Register from "./Pages/Contents/admin/Admin";
+import Admin from "./Pages/Contents/admin/Admin";
+import Login from "./Pages/Navbarr/Login/Login";
+import Footer from "./Pages/Footer/Footer";
+import Profile from "./Pages/Profile/Profile";
+import NavBar from "./Pages/Navbarr/Navbar/Navbar";
+import Home from "./Pages/Navbarr/Home/Home";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import NavBar from "./components/navbar/Navbar";
-import Home from "./components/Home/Home";
 
 //import  Dashbord  from "./components/dashbord/Dashbord";
 //import PrivateRoute from "./components/router/privateRoute"
@@ -23,30 +19,21 @@ import Home from "./components/Home/Home";
   crossorigin="anonymous"
 />
 
-
-
-
 function App() {
   //const dispatch = useDispatch()
   useEffect(() => {
-  
-  
-    return () => {
-     
+    return () => {  
     }
   }, [])
   
-  
   return (
     <div className="App">
-      <NavBar/>
-      
     
+      <NavBar/>
       <Routes>
       <Route path ="/home" element= {<Home/>}/>
       <Route path ="/login" element= {<Login/>}/>
       <Route path ="/register" element= {<Register/>}/>
-      <Route path ="/user" element= {<User/>}/>
       <Route path ="/admin" element= {<Admin/>}/>
       <Route path ="/profile" element= {<Profile/>}/>
       {/* <privateRoute path ="/dashbord" element= {<Dashbord/>}/> */}
