@@ -5,7 +5,7 @@ import axios from "axios";
 export const registerUser=(user)=>async dispatch=>{
     dispatch ({ type:LOAD_USER});
     try {
-     const result= await  axios.post("/user/register",user) //{newUser,msg,token}
+     const result= await  axios.post("http://localhost:8000/user/register",user) //{newUser,msg,token}
      
       dispatch ({type:REGISTER_USER,payload:result.data});
     } catch (error) {
