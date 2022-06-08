@@ -8,6 +8,7 @@ export const registerUser=(user)=>async dispatch=>{
      const result= await  axios.post("http://localhost:8000/user/register",user) //{newUser,msg,token}
      
       dispatch ({type:REGISTER_USER,payload:result.data});
+      
     } catch (error) {
        dispatch ({type:FAIL_USER,payload:error.response.data}) 
     }
