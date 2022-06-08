@@ -6,7 +6,7 @@ import Login from "./Pages/login/Login";
 import Footer from "./components/Footer/Footer";
 import Profile from "./Pages/profile/Profile";
 import NavBar from "./components/Navbar/Navbar";
-import User from "./Pages/user/User";
+import User from "./Pages/user-home/user-home";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddCar from "./Pages/add-car/Addcar";
 import EditCar from "./Pages/edit-car/Editcar";
