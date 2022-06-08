@@ -20,12 +20,23 @@ function NavBar() {
             <li className="nav-item">
               <NavLink
                 
-                to="/Home"
+                to="/user"
             
                 className="nav-links"
                 onClick={handleClick}
               >
-                Home
+                User home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                
+                to="/admin"
+            
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Admin home
               </NavLink>
             </li>
             
@@ -59,7 +70,7 @@ function NavBar() {
                 className="nav-links"
                 onClick={handleClick}
               >
-                Contact Us
+                Contact 
               </NavLink>
               
             </li>

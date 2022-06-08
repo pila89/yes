@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {registerUser} from  "../../../Redux/actions/user";
+import {registerUser} from  "../../Redux/actions/user";
 import {Form , Button, Card} from 'react-bootstrap';
 
 const Register =()=>{
