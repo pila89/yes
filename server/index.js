@@ -49,6 +49,7 @@ console.log(path.join(__dirname, 'src/public'))
 app.use("/user", require("@routes/user-route"));
 app.use("/voiture", require("@routes/voiture-route"));
 app.use("/image", require("@routes/images.routes"));
+app.use("/contact", require("@routes/Contact-route"));
 
 
 //PORt

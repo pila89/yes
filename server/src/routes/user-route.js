@@ -26,14 +26,6 @@ userRouter.delete('/:id',deleteOneUser);
 
  
 
-// userRouter.get("/get/:email", async (req, res) => {
-//   try {
-//     let result = await User.findOne({'email': req.params.email});
-//     res.send( result );
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
 
 
 

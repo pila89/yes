@@ -1,21 +1,20 @@
-const express=require('express')
+const express=require('express');
 const router=express.Router();
 const { postContact, getAllContacts,getOneContact,updateContact,deleteOneContact} = require( "@controllers/Contact-controller");
 
-require('dotenv').config();
-//add avis
-router.post('/',postContact)
+//add Contact
+router.post("/",postContact);
 
-//get all avis
-router.get("/",getAllContacts)
+//get all Contact
+router.get("/",getAllContacts);
 
-//get one avis
-router.get('/:id',getOneContact)
-//update avis
-router.put('/:id',updateContact)
+// //get one Contact
+router.get("/:id",getOneContact);
 
-//delete avis
+ //update Contact
+ router.put("/:id",updateContact);
 
-router.delete('/:id',deleteOneContact)
+ //delete Contact
+ router.delete('/:id',deleteOneContact);
 
 module.exports = router;

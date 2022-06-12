@@ -1,4 +1,4 @@
-import { GET_CARS } from "../const/voiture";
+import { GET_CARS ,ADD_CAR,FAIL_CAR} from "../const/voiture";
 
 
 const initialState = {
@@ -10,8 +10,11 @@ export const carReducer=(state=initialState,{type,payload})=>{
         
         case GET_CARS:
             return {...state,voitures:payload.data};
-        
+        case ADD_CAR:
+            return {...state,voitures:payload.data};
+        case FAIL_CAR:
+            return {...state,errors:payload,voitures:[]};
         default:
-            return state;
+            return {...state,voitures:payload};
     }
 }

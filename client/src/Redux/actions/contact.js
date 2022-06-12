@@ -1,27 +1,27 @@
-import {GET_CARS,ADD_CAR ,FAIL_CAR} from "../const/voiture";
+import {GET_CONTACT,ADD_CONTACT ,FAIL_CONTACT} from "../const/contact";
 import axios from "axios";
 
-//get all Car
+//get all Contact
 export const getAllVoiture=()=>async dispatch=>{
     try {
-     const result= await axios.get("http://localhost:8000/voiture/") 
+     const result= await axios.get("http://localhost:8000/contact/") 
      
-      dispatch ({type:GET_CARS,payload:result});
+      dispatch ({type:GET_CONTACT,payload:result});
       
     } catch (error) {
-       dispatch ({type:FAIL_CAR,payload:error.response.data}) 
+       dispatch ({type:FAIL_CONTACT,payload:error.response.data}) 
     }
 }
 
-//ADD_CAR
-export const addVoiture=(car)=>async dispatch=>{
+//ADD_Contact
+export const addContact=(contact)=>async dispatch=>{
     try {
-        const result= await axios.post('http://localhost:8000/voiture/' ,car )
-         dispatch({type: ADD_CAR, payload:result})
+        const result= await axios.post('http://localhost:8000/contact/' ,contact )
+         dispatch({type: ADD_CONTACT, payload:result})
         ;
     } catch (error) {
         console.log(error)
-        dispatch({type: FAIL_CAR , payload:error.response.data})
+        dispatch({type: FAIL_CONTACT , payload:error.response.data})
     }
 }
 
