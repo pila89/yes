@@ -17,9 +17,8 @@ exports.register = async (req, res) => {
     const salt = 10;
     const genSalt = await bcrypt.genSalt(salt);
     const hashedPassword = await bcrypt.hash(req.body.pwd, genSalt);
-    console.log(hashedPassword);
     newUser.pwd = hashedPassword;
-    console.log(newUser);
+    
     // // generate a token
     // const payload = {
     //   _id:newUser_id,
@@ -43,7 +42,7 @@ exports.login = async (req, res) => {
     const { email, pwd } = req.body;
     //find if the user exist
     const searchedUser = await User.findOne({ email });
-    console.log(searchedUser);
+    
     //if the email ot exist
     if (!searchedUser) {
       return res.status(400).send({ msg: "bad condentaila" });
@@ -51,7 +50,7 @@ exports.login = async (req, res) => {
     //password are equals
 
     const match = await bcrypt.compare(pwd, searchedUser.pwd);
-    console.log(match);
+    
     //send the user
     if (!match) {
       return res.status(400).send({ msg: "bad pila" });
@@ -61,12 +60,11 @@ exports.login = async (req, res) => {
       _id: searchedUser._id,
       fullName: searchedUser.fullName,
     };
-    console.log(payload);
+
     const token = await jwt.sign(payload, process.env.SecretOrkey, {
       expiresIn: 8000,
     });
 
-    console.log(token);
     //send the user
     res
       .status(200)

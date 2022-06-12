@@ -2,7 +2,7 @@ import {GET_CONTACT,ADD_CONTACT ,FAIL_CONTACT} from "../const/contact";
 import axios from "axios";
 
 //get all Contact
-export const getAllVoiture=()=>async dispatch=>{
+export const getAllContacts=()=>async dispatch=>{
     try {
      const result= await axios.get("http://localhost:8000/contact/") 
      
@@ -25,16 +25,16 @@ export const addContact=(contact)=>async dispatch=>{
     }
 }
 
-//EDIT_CAR
- export const editVoiture=(id,voiture)=> dispatch =>{
-        axios.put(`http://localhost:8000/voiture/${id}`,voiture)
-        .then(res=>dispatch(getAllVoiture()))
+//EDIT_Contact
+ export const editContact=(id,contact)=> dispatch =>{
+        axios.put(`http://localhost:8000/contact/${id}`,contact)
+        .then(res=>dispatch(getAllContacts()))
         .catch(err=>console.log(err))
        }
 
-//DELETE_CAR
-export const deleteVoiture=(id)=>async(dispatch)=>{
-       axios.delete(`http://localhost:8000/voiture/${id}`)
-       .then(res=>dispatch(getAllVoiture()))
+//DELETE_Contact
+export const deleteContact=(id)=>async(dispatch)=>{
+       axios.delete(`http://localhost:8000/contact/${id}`)
+       .then(res=>dispatch(getAllContacts()))
        .catch(err=>console.log(err))   
  }

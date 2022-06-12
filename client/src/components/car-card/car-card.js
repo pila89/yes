@@ -1,15 +1,15 @@
 import React from 'react'
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
- function Voiturecard ({voiture}) {
+ function CarCard ({car}) {
 
   return (
   <div>
 <Card style={{ width: "18rem" }}>
             <Card.Img variant="top" />
             <Card.Body>
-              <Card.Title>marque:{voiture.marque}</Card.Title>
-              <Card.Title>kilometrage:{voiture.kilometrage}</Card.Title>
+              <Card.Title>marque:{car.marque}</Card.Title>
+              <Card.Title>kilometrage:{car.kilometrage}</Card.Title>
               <Card.Text>...</Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
@@ -22,4 +22,4 @@ import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
   </div>
          )
 }
-export default Voiturecard;
+export default CarCard;

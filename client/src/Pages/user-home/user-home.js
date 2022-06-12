@@ -1,24 +1,31 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Voiturecard from "../../components/voiturecard/Voiturecard";
-import { getAllVoiture } from "../../Redux/actions/voiture";
+import CarCard from "../../components/car-card/car-card";
+import { getAllCars } from "../../Redux/actions/car";
 
-//recuperer les listes des voitures
+//get cars
 
 function User() {
 
   const dispatch = useDispatch();
-  const voitures = useSelector((state) => state.carReducer.voitures);
-console.log(voitures);
+  const cars = useSelector((state) => state.carReducer.cars);
+
   useEffect(() => {
-    dispatch(getAllVoiture())
+    dispatch(getAllCars())
   }, []);
 
   return (
     <div>
-        {!voitures ?<div>loading </div>: voitures.map((el) => (
-          <Voiturecard voiture={el} />
+      <div>  User space : List of cars</div>
+      
+        {!cars ?<div>loading </div>: cars.map((el) => (
+          <CarCard car={el} />
       ))}  
+      
+      {
+cars && cars.length == 0 ? <div> No cars available</div>:<div> </div>
+      } 
+      
     </div>
   );
 }

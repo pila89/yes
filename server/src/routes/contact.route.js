@@ -1,6 +1,6 @@
 const express=require('express');
 const router=express.Router();
-const { postContact, getAllContacts,getOneContact,updateContact,deleteOneContact} = require( "@controllers/Contact-controller");
+const { postContact, getAllContacts,getOneContact,updateContact,deleteOneContact} = require( "../controllers/contact.controller");
 
 //add Contact
 router.post("/",postContact);

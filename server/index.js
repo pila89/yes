@@ -46,10 +46,10 @@ app.use(express.static(path.join(__dirname, 'src/public')))
 console.log(path.join(__dirname, 'src/public'))
 
 // API
-app.use("/user", require("@routes/user-route"));
-app.use("/voiture", require("@routes/voiture-route"));
+app.use("/user", require("./src/routes/user.route"));
+app.use("/car", require("@routes/car.route"));
 app.use("/image", require("@routes/images.routes"));
-app.use("/contact", require("@routes/Contact-route"));
+app.use("/contact", require("./src/routes/contact.route"));
 
 
 //PORt

@@ -8,8 +8,8 @@ import React, { useEffect } from "react";
 function User() {
   const dispatch = useDispatch();
  
-  const users = useSelector((state) => state.userReducer.users);
-  console.log(users);
+  const users = useSelector((state) => state.userReducer.user);
+  
 
   useEffect(() => {
     dispatch(getUsers())
@@ -18,12 +18,10 @@ function User() {
   return (
     
     <div>
-      
-      {users.map((el) => (
-        
+      {!users ?<div>loading </div>: users.map((el) => (
           <Usercard user={el} />
-      
-      ))}
+      ))} 
+     
     </div>
   );
 }

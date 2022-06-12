@@ -15,6 +15,6 @@ export const contactReducer=(state=initialState,{type,payload})=>{
         case FAIL_CONTACT:
             return {...state,errors:payload,contacts:[]};
         default:
-            return {...state,contacts:payload};
+            return state;
     }
 }

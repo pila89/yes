@@ -1,4 +1,4 @@
-const contact=require("@models/Contact");
+const contact=require("../models/contact");
 
 //post one contact
 
