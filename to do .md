@@ -13,7 +13,17 @@ Admin: envoie des messages , lire des messages (contact bch yawali message) : NO
 User: Reserver Cars : NOT OK SCHEMA
 User: FILTER CARS & Search : NOT Ok
 
+        *******
+
+BUTTON LOG OUT + PROFILE : IF USER CONNECETED
+BUTTON REGISTER + LOGIN  : IF USER NOT CONNECTED
+
 ////////////////////////////////////////////////////////////////////////////////////////
 
 Gestion des ROLES : Header
 User can only update his cars!
+
+CSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+
+////////////////////////////////////////////////////////////////////////////////////////
+HEROUKOU
