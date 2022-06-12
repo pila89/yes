@@ -1,41 +1,19 @@
-import { Col, Row, Form, Input } from "antd";
-import React, { useEffect, useState } from "react";
- import { useDispatch, useSelector  } from "react-redux";
+//import { Col, Row, Form, Input } from "antd";
+import React from "react";
+//import { useDispatch, useSelector } from "react-redux";
 
 // //import { addCar, editCar, getAllCars } from "../redux/actions/carsActions";
 // import DefaultLayout from "../../../components/Defaultleyout";
 // import Spinner from "../../../components/spinner";
 
-
 function EditCar({ match }) {
-   const { cars } = useSelector((state) => state.carsReducer);
- const dispatch = useDispatch();
-  const { loading } = useSelector((state) => state.alertsReducer);
-   const [car, setcar] = useState();
-   const [totalcars, settotalcars] = useState([]);
-   useEffect(() => {
-     if (cars.length == 0) {
-      dispatch();
-    } else {
-       settotalcars(cars);
-      setcar(cars.find((o) => o._id == match.params.carid));
-    
-    }
-  }, [cars]);
-
-   function onFinish(values) {
-    values._id = car._id;
-   }
-    // dispatch((values));
-    // console.log(values);
-  
-
   return (
     //<DefaultLayout>
     //   {loading && <Spinner />}
     <div>
-      <Row justify="center mt-5">
-        <Col lg={12} sm={24} xs={24} className='p-2'>
+      hallo
+      {/* <Row justify="center mt-5">
+        <Col lg={12} sm={24} xs={24} className="p-2">
           {totalcars.length > 0 && (
             <Form
               initialValues={car}
@@ -88,9 +66,10 @@ function EditCar({ match }) {
             </Form>
           )}
         </Col>
-      </Row>
-     </div>
-   // </DefaultLayout>
+      </Row> */}
+    
+    
+    </div>
   );
 }
 

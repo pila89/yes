@@ -27,6 +27,7 @@ const contactSchema=new schema({
             type:String,
             default:Date.now()
         },
+    _id :{ type:String },
 
 
 });

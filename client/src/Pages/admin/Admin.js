@@ -7,10 +7,8 @@ import React, { useEffect } from "react";
 
 function User() {
   const dispatch = useDispatch();
- 
   const users = useSelector((state) => state.userReducer.user);
   
-
   useEffect(() => {
     dispatch(getUsers())
   }, []);
@@ -18,10 +16,14 @@ function User() {
   return (
     
     <div>
+      <div >  Admin space : List of users </div>
+
       {!users ?<div>loading </div>: users.map((el) => (
           <Usercard user={el} />
       ))} 
-     
+      {
+       users && users.length == 0 ? <div> No users available</div>:<div> </div>
+      } 
     </div>
   );
 }

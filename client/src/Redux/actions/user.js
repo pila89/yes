@@ -59,4 +59,12 @@ export const current=()=> async dispatch=>{
   
     }
   }
+//deleteUser
+  export const deleteUser=(id)=>async(dispatch)=>{
+    console.log(id);
+    axios.delete(`http://localhost:8000/user/${id}`)
+    
+    .then(res=>dispatch(getUsers()))
+    .catch(err=>console.log(err))   
+}
   

@@ -17,9 +17,14 @@ function User() {
   return (
     <div>
       <div>  User space : List of cars</div>
+      <div> My cars  </div>
       
-        {!cars ?<div>loading </div>: cars.map((el) => (
-          <CarCard car={el} />
+        {!cars ?<div>loading </div>: cars.map((el,index)  => ( 
+        <div key={index}> 
+        <CarCard car={el} />
+        </div>
+
+          
       ))}  
       
       {

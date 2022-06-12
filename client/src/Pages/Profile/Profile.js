@@ -1,4 +1,4 @@
-import classes from "./Profile.module.css"
+import classes from "./Profile.module.css";
 import { SwitchVerticalIcon } from "@heroicons/react/outline";
 import { useEffect, useState } from "react";
 import Image from "./Image";

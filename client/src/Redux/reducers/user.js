@@ -1,4 +1,4 @@
-import { LOAD_USER,REGISTER_USER,LOGIN_USER,LOGOUT_USER,FAIL_USER,CURRENT_USER ,GET_USER} from "../const/user";
+import { LOAD_USER,REGISTER_USER,LOGIN_USER,LOGOUT_USER,FAIL_USER,CURRENT_USER ,GET_USER,DELETE_USER} from "../const/user";
 
 
 const initialState = {
@@ -8,7 +8,7 @@ const initialState = {
     isAuth:false,
 }
 export const userReducer=(state=initialState,{type,payload})=>{
-    console.log(payload);
+    
     switch (type) {
         case REGISTER_USER:
             localStorage.setItem("token",payload.token);
@@ -27,6 +27,9 @@ export const userReducer=(state=initialState,{type,payload})=>{
         case LOGOUT_USER:
             localStorage.removeItem("token")
             return {  user:null,loadUser:false,errors:null,isAuth:false }
+        case DELETE_USER:
+            return {  ...state,user:payload } 
+            
         default:
             return state;
     }

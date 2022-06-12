@@ -6,7 +6,7 @@ const initialState = {
     cars:null
 }
 export const carReducer=(state=initialState,{type,payload})=>{
-    console.log(payload);
+    
     switch (type) {
         
         case GET_CARS:

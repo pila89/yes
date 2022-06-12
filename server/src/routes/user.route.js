@@ -20,7 +20,7 @@ userRouter.post("/register",registerValidate(),validation,register);
 userRouter.get("/",getUsers);
 
 //delete One User
-userRouter.delete('/:id',deleteOneUser);
+userRouter.delete("/:id",deleteOneUser);
 
  module.exports = userRouter;
 

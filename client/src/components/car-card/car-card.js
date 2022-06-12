@@ -1,25 +1,55 @@
-import React from 'react'
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Card, Dropdown, Modal } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { deleteCar } from "../../Redux/actions/car";
+import { Link } from "react-router-dom";
 
- function CarCard ({car}) {
+function CarCard({ car }) {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const dispatch = useDispatch();
 
   return (
-  <div>
-<Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" />
-            <Card.Body>
-              <Card.Title>marque:{car.marque}</Card.Title>
-              <Card.Title>kilometrage:{car.kilometrage}</Card.Title>
-              <Card.Text>...</Card.Text>
-            </Card.Body>
-            <ListGroup className="list-group-flush">
-              <ListGroupItem>2022</ListGroupItem>
-            </ListGroup>
-            <Card.Body>
-              <Card.Link href="#">Card Link</Card.Link>
-            </Card.Body>
-          </Card>
-  </div>
-         )
+    <div>
+      <Card style={{ width: "18rem" }}>
+        <div>
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              Actions
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+
+              <Link id="RouterNavLink"  to={`/editCar/${car._id}`}>Edit</Link>
+                <Dropdown.Item>Edit</Dropdown.Item>
+              <Dropdown.Item onClick={handleShow}>Delete</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
+
+        <Card.Body>
+          <Card.Title>marque:{car.marque}</Card.Title>
+          <Card.Title>kilometrage:{car.kilometrage}</Card.Title>
+        </Card.Body>
+      </Card>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Delete CAR</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Do you want to delete the selected car? </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button
+            variant="primary"
+            onClick={() => dispatch(deleteCar(car._id))}
+          >
+            Confirm
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </div>
+  );
 }
 export default CarCard;
