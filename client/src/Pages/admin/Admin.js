@@ -1,15 +1,33 @@
-import React from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import Usercard from "../../components/usercard/Usercard";
+import { getUsers } from "../../Redux/actions/user";
+import React, { useEffect } from "react";
 
-function App() {
+//recuperer les listes des users
 
-  //recuperer listes des users
-  
+function User() {
+  const dispatch = useDispatch();
+ 
+  const users = useSelector((state) => state.userReducer.users);
+  console.log(users);
+
+  useEffect(() => {
+    dispatch(getUsers())
+  }, []);
+
   return (
+    
     <div>
-    Hallo Admin
+      
+      {users.map((el) => (
+        
+          <Usercard user={el} />
+      
+      ))}
     </div>
   );
 }
-export default App
+export default User;
+
 
 

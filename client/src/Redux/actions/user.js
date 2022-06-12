@@ -1,4 +1,4 @@
-import { LOAD_USER,REGISTER_USER,LOGIN_USER,FAIL_USER, CURRENT_USER ,LOGOUT_USER} from "../const/user";
+import { LOAD_USER,REGISTER_USER,LOGIN_USER,FAIL_USER,GET_USER, CURRENT_USER ,LOGOUT_USER} from "../const/user";
 import axios from "axios";
 
 //registerUser
@@ -19,7 +19,7 @@ export const registerUser=(user)=>async dispatch=>{
 export const loginUser=(user)=>async dispatch=>{
     dispatch ({ type:LOAD_USER});
     try {
-     const result= await  axios.post("/user/login",user) //{newUser,msg,token}
+     const result= await  axios.post("http://localhost:8000/user/login",user) //{newUser,msg,token}
       dispatch ({type:LOGIN_USER,payload:result.data});
     } catch (error) {
        dispatch ({type:FAIL_USER,payload:error.response.data}) 
@@ -35,7 +35,7 @@ export const current=()=> async dispatch=>{
       }
     }
     try {
-      let result= await axios.get("/user/current",options); // return current user
+      let result= await axios.get("http://localhost:8000/user/current",options); // return current user
       dispatch({type:CURRENT_USER, payload:result.data.user})
     } catch (error) {
       
@@ -47,5 +47,16 @@ export const current=()=> async dispatch=>{
     return {
       type:LOGOUT_USER
     };
+  }
+//getUsers
+  export const getUsers=()=>async(dispatch)=>{
+    dispatch({type:LOAD_USER})
+    try {
+        let result= await axios.get("http://localhost:8000/user")
+        dispatch({type:GET_USER,payload:result.data.result})
+    } catch (error) {
+        dispatch({type:FAIL_USER,payload:error})
+  
+    }
   }
   

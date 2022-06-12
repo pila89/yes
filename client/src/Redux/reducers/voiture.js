@@ -1,6 +1,5 @@
 import { GET_CARS ,ADD_CAR,FAIL_CAR} from "../const/voiture";
 
-
 const initialState = {
     voitures:[],  
     errors:null
