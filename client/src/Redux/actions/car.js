@@ -16,7 +16,7 @@ export const getAllCars=()=>async dispatch=>{
 //ADD_CAR
 export const addCar=(car)=>async dispatch=>{
     try {
-        const result= await axios.post('http://localhost:8000/car/' ,car )
+        const result= await axios.post("http://localhost:8000/car/" ,car )
          dispatch({type: ADD_CAR, payload:result})
         ;
     } catch (error) {

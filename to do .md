@@ -1,12 +1,11 @@
 Admin: get UserS : OK
 Admin: delete Users : OK
 User : Get Cars : OK
-
+User: Delete Cars : OK
 //////////////////////////////////////////////////////////////////////////////////////
 
-User: Add Cars : NOT OK
+User: Add Cars : OK
 User: EDIT CAR : NOT OK
-User: Delete Cars : NOT OK
 User: Update Profile : NOT OK
         *******
 Admin: envoie des messages , lire des messages (contact bch yawali message) : NOT OK
